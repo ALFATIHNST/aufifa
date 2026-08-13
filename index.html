@@ -3,150 +3,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUFIFA - Rajanya Ayam Geprek & Penyet Pedas</title>
+    <title>AUFIFA - Premium Crispy Chicken & Geprek</title>
+    <!-- Google Fonts untuk tampilan elegan -->
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
         :root {
-            --primary: #FF4500;
-            --secondary: #FFD700;
-            --dark: #222;
-            --light: #fff;
+            --primary: #FF3E1D;
+            --primary-hover: #E02F10;
+            --secondary: #FFB800;
+            --dark: #0F0F11;
+            --light: #FFFFFF;
+            --gray-bg: #F8F9FA;
+            --text-dark: #1F2937;
+            --text-muted: #6B7280;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            background-color: #f9f9f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
         }
+
+        body {
+            background-color: var(--gray-bg);
+            color: var(--text-dark);
+        }
+
+        /* HEADER & NAVIGATION */
         header {
-            background-color: var(--dark);
+            background: rgba(15, 15, 17, 0.95);
+            backdrop-filter: blur(10px);
             color: var(--light);
-            padding: 15px 5%;
+            padding: 15px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 4px solid var(--primary);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
         }
+
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
+
         .logo-container img {
-            height: 60px;
+            height: 50px;
+            width: 50px;
+            object-fit: cover;
             border-radius: 50%;
+            border: 2px solid var(--secondary);
         }
+
         .logo-container h1 {
-            margin: 0;
-            font-size: 24px;
-            color: var(--secondary);
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: linear-gradient(45deg, var(--light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
+
         nav a {
             color: var(--light);
             text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-            transition: 0.3s;
+            margin-left: 25px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
         }
+
         nav a:hover {
             color: var(--secondary);
         }
+
+        /* HERO SECTION */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://unsplash.com');
+            background: linear-gradient(rgba(15, 15, 17, 0.7), rgba(15, 15, 17, 0.85)), url('https://unsplash.com');
             background-size: cover;
             background-position: center;
             color: var(--light);
             text-align: center;
-            padding: 100px 20px;
+            padding: 140px 20px;
         }
+
         .hero h2 {
-            font-size: 42px;
-            margin-bottom: 10px;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero h2 span {
             color: var(--secondary);
         }
+
         .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
+            font-size: 18px;
+            color: #E5E7EB;
+            margin-bottom: 35px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
+
+        /* BUTTONS */
         .btn {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), #FF5733);
             color: var(--light);
-            padding: 12px 30px;
+            padding: 14px 35px;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 25px;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+            font-weight: 600;
+            border-radius: 50px;
             display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(255, 62, 29, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
         }
+
         .btn:hover {
-            background-color: #e03d00;
-            transform: scale(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(255, 62, 29, 0.4);
+            background: var(--primary-hover);
         }
+
+        /* MENU SECTION */
         .menu-section {
-            padding: 60px 5%;
+            padding: 80px 8%;
             text-align: center;
         }
-        .menu-section h2 {
+
+        .section-title {
             font-size: 32px;
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--dark);
         }
-        .menu-section h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary);
-            margin: 10px auto 0;
+
+        .section-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: 16px;
         }
+
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
         }
+
         .menu-card {
             background: var(--light);
-            border-radius: 15px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
+
         .menu-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
+
+        .menu-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 230px;
+        }
+
         .menu-img {
-            height: 200px;
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
+            transition: transform 0.5s ease;
         }
+
+        .menu-card:hover .menu-img {
+            transform: scale(1.1);
+        }
+
+        .badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(15, 15, 17, 0.85);
+            color: var(--secondary);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+        }
+
         .menu-info {
-            padding: 20px;
+            padding: 25px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
+
         .menu-info h3 {
-            margin: 0 0 10px 0;
             font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
         }
-        .price {
+
+        .menu-info p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .price-tag {
+            font-size: 24px;
+            font-weight: 800;
             color: var(--primary);
-            font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
+
+        /* CUSTOMIZER FORMS (Pedas & Nasi) */
+        .order-options {
+            background: var(--gray-bg);
+            padding: 15px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .option-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .option-group label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .option-group select {
+            width: 100%;
+            padding: 8px 12px;
+            border-radius: 10px;
+            border: 1px solid #E5E7EB;
+            background-color: var(--light);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            outline: none;
+        }
+
+        /* FOOTER */
         footer {
             background-color: var(--dark);
             color: var(--light);
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-            border-top: 4px solid var(--secondary);
+            padding: 60px 8% 30px;
+            margin-top: 80px;
         }
-        footer p {
-            margin: 5px 0;
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about h3 {
+            font-size: 24px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .footer-about p {
+            color: #9CA3AF;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-contact h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact p {
+            color: #9CA3AF;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #27272A;
+            font-size: 13px;
+            color: #6B7280;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 5%; }
+            nav { display: none; } /* Menyederhanakan tampilan mobile */
+            .hero h2 { font-size: 34px; }
+            .menu-section { padding: 60px 5%; }
         }
     </style>
 </head>
@@ -154,7 +330,6 @@
 
     <header>
         <div class="logo-container">
-            <!-- Gunakan file logo AUFIFA Anda di sini -->
             <img src="logo_aufifa.png" alt="Logo AUFIFA">
             <h1>AUFIFA</h1>
         </div>
@@ -166,50 +341,19 @@
     </header>
 
     <section class="hero" id="home">
-        <h2>Sensasi Pedas Menggelegar!</h2>
-        <p>Nikmati kelezatan Ayam Geprek, Ayam Goreng Renyah, dan Ayam Penyet Khas AUFIFA</p>
-        <a href="https://wa.me!" class="btn" target="_blank">Pesan Sekarang via WA</a>
+        <h2>Sensasi Renyah & <span>Pedas Menggelegar!</span></h2>
+        <p>Geprek tumbuk segar, ayam goreng kaya rempah, dan penyetan tradisional buatan AUFIFA siap memanjakan lidah Anda hari ini.</p>
+        <a href="#menu" class="btn">Lihat Menu & Pesan</a>
     </section>
 
     <section class="menu-section" id="menu">
-        <h2>Menu Andalan Kami</h2>
+        <h2 class="section-title">Menu Andalan Terbaik</h2>
+        <p class="section-subtitle">Pilih menu favoritmu, atur tingkat pedasmu, dan pesan langsung lewat WhatsApp!</p>
+        
         <div class="menu-grid">
+            
+            <!-- MENU 1 -->
             <div class="menu-card">
-                <div class="menu-img" style="background-image: url('https://unsplash.com');"></div>
-                <div class="menu-info">
-                    <h3>Ayam Geprek Spesial</h3>
-                    <p>Ayam crispy renyah ditumbuk dengan sambal korek bawang super pedas. Level 1-5!</p>
-                    <div class="price">Rp 15.000</div>
-                    <a href="https://wa.me" class="btn" target="_blank">Pesan</a>
-                </div>
-            </div>
-            <div class="menu-card">
-                <div class="menu-img" style="background-image: url('https://unsplash.com');"></div>
-                <div class="menu-info">
-                    <h3>Ayam Goreng Lengkuas</h3>
-                    <p>Ayam goreng tradisional dengan taburan kremesan lengkuas gurih dan sambal lalapan.</p>
-                    <div class="price">Rp 14.000</div>
-                    <a href="https://wa.me" class="btn" target="_blank">Pesan</a>
-                </div>
-            </div>
-            <div class="menu-card">
-                <div class="menu-img" style="background-image: url('https://unsplash.com');"></div>
-                <div class="menu-info">
-                    <h3>Ayam Penyet Gurih</h3>
-                    <p>Ayam ungkep bumbu meresap yang dipenyet di atas cobek sambal terasi matang hangat.</p>
-                    <div class="price">Rp 16.000</div>
-                    <a href="https://wa.me" class="btn" target="_blank">Pesan</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="kontak">
-        <p><strong>AUFIFA AYAM GEPREK</strong></p>
-        <p>Jl. Pedas Berapi No. 123, Kota Kuliner</p>
-        <p>Hubungi Kami: 0881-0102-77679 | Instagram: @aufifa.geprek</p>
-        <p style="font-size: 12px; color: #888; margin-top: 15px;">&copy; 2026 AUFIFA Kuliner. All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
+                <div class="menu-img-wrapper">
+                    <span class="badge">Best Seller</span>
+                    <div class="menu-img" style="background-image: url('https://unsplash.com');"></div>
