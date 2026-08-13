@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUFIFA - Rajanya Ayam Geprek & Penyet Pedas</title>
+    <style>
+        :root {
+            --primary: #FF4500;
+            --secondary: #FFD700;
+            --dark: #222;
+            --light: #fff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 4px solid var(--primary);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-container img {
+            height: 60px;
+            border-radius: 50%;
+        }
+        .logo-container h1 {
+            margin: 0;
+            font-size: 24px;
+            color: var(--secondary);
+        }
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: var(--secondary);
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            color: var(--light);
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #e03d00;
+            transform: scale(1.05);
+        }
+        .menu-section {
+            padding: 60px 5%;
+            text-align: center;
+        }
+        .menu-section h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        .menu-section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 10px auto 0;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .menu-card {
+            background: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+        .menu-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        .menu-info {
+            padding: 20px;
+        }
+        .menu-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 22px;
+        }
+        .price {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+            border-top: 4px solid var(--secondary);
+        }
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <!-- Gunakan file logo AUFIFA Anda di sini -->
+            <img src="logo_aufifa.png" alt="Logo AUFIFA">
+            <h1>AUFIFA</h1>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h2>Sensasi Pedas Menggelegar!</h2>
+        <p>Nikmati kelezatan Ayam Geprek, Ayam Goreng Renyah, dan Ayam Penyet Khas AUFIFA</p>
+        <a href="https://wa.me!" class="btn" target="_blank">Pesan Sekarang via WA</a>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <h2>Menu Andalan Kami</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="menu-img" style="background-image: url('https://unsplash.com');"></div>
+                <div class="menu-info">
+                    <h3>Ayam Geprek Spesial</h3>
+                    <p>Ayam crispy renyah ditumbuk dengan sambal korek bawang super pedas. Level 1-5!</p>
+                    <div class="price">Rp 15.000</div>
+                    <a href="https://wa.me" class="btn" target="_blank">Pesan</a>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="menu-img" style="background-image: url('https://unsplash.com');"></div>
+                <div class="menu-info">
+                    <h3>Ayam Goreng Lengkuas</h3>
+                    <p>Ayam goreng tradisional dengan taburan kremesan lengkuas gurih dan sambal lalapan.</p>
+                    <div class="price">Rp 14.000</div>
+                    <a href="https://wa.me" class="btn" target="_blank">Pesan</a>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="menu-img" style="background-image: url('https://unsplash.com');"></div>
+                <div class="menu-info">
+                    <h3>Ayam Penyet Gurih</h3>
+                    <p>Ayam ungkep bumbu meresap yang dipenyet di atas cobek sambal terasi matang hangat.</p>
+                    <div class="price">Rp 16.000</div>
+                    <a href="https://wa.me" class="btn" target="_blank">Pesan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontak">
+        <p><strong>AUFIFA AYAM GEPREK</strong></p>
+        <p>Jl. Pedas Berapi No. 123, Kota Kuliner</p>
+        <p>Hubungi Kami: 0881-0102-77679 | Instagram: @aufifa.geprek</p>
+        <p style="font-size: 12px; color: #888; margin-top: 15px;">&copy; 2026 AUFIFA Kuliner. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
